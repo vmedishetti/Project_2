@@ -1,5 +1,7 @@
 # tests/test_datetime.py
-import pytest
+import sys
+sys.path.append("..")  # Add parent directory to the Python path
+
 from my_datetime.datetime import Datetime
 
 def test_constructor_defaults():
