@@ -3,8 +3,11 @@ import datetime
 
 class Datetime:
     def __init__(self, year=None, month=None, day=None, hour=0, minute=0, second=0):
-        # Initialize the datetime object
-        self.date_time = datetime.datetime(year, month, day, hour, minute, second)
+        # Check for None values and use the current date and time if needed
+        if year is None or month is None or day is None:
+            self.date_time = datetime.datetime.now()
+        else:
+            self.date_time = datetime.datetime(year, month, day, hour, minute, second)
 
     @staticmethod
     def date_from_string(date_string):
