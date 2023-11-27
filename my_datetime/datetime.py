@@ -1,9 +1,8 @@
-# my_datetime/datetime.py
 import datetime
 
 class Datetime:
     def __init__(self, year=None, month=None, day=None, hour=0, minute=0, second=0):
-        # Check for None values and use the current date and time if needed
+        # Checking for None values and use the current date and time if needed
         if year is None or month is None or day is None:
             self.date_time = datetime.datetime.now()
         else:
@@ -11,12 +10,12 @@ class Datetime:
 
     @staticmethod
     def date_from_string(date_string):
-        # Create a date object from a string
+        # Creating a date object from a string
         return Datetime(*map(int, date_string.split('-')))
 
     @staticmethod
     def validate_date(day, month, year):
-        # Validate whether a given set of date arguments forms a valid date
+        # Validating whether a given set of date arguments forms a valid date
         try:
             datetime.datetime(year, month, day)
             return True
@@ -25,7 +24,7 @@ class Datetime:
 
     @staticmethod
     def date_difference(date1, date2, unit='days'):
-        # Calculate the difference between two dates
+        # Calculating the difference between two dates
         delta = date2.date_time - date1.date_time
         if unit == 'days':
             return delta.days
@@ -37,9 +36,9 @@ class Datetime:
             raise ValueError(f"Invalid unit: {unit}")
 
     def iso_format(self):
-        # Display the datetime in ISO 8601 format
+        # Displaying the datetime in ISO 8601 format
         return self.date_time.isoformat()
 
     def human_readable_format(self):
-        # Display the datetime in a human-readable format
+        # Displaying the datetime in a human-readable format
         return self.date_time.strftime("%A, %B %d, %Y %I:%M %p")

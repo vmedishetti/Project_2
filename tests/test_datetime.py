@@ -1,9 +1,8 @@
-# tests/test_datetime.py
 import sys
 from os.path import abspath, dirname
 import datetime
 
-# Add the parent directory to the Python path
+# Adding the parent directory to the Python path
 sys.path.append(abspath(dirname(dirname(__file__))))
 
 from my_datetime.datetime import Datetime
@@ -19,7 +18,7 @@ def test_constructor_defaults():
     assert dt.date_time.minute == current_datetime.minute
     assert dt.date_time.second == current_datetime.second
 
-    # Print the actual values for reference
+    # Printing the actual values for reference
     print(f"Actual Year: {dt.date_time.year}")
     print(f"Actual Month: {dt.date_time.month}")
     print(f"Actual Day: {dt.date_time.day}")
@@ -34,6 +33,6 @@ def test_iso_format():
     
     assert iso_format_result == expected_iso_format
 
-    # Print the actual and expected values for reference
+    # Printing the actual and expected values for reference
     print(f"Actual ISO Format: {iso_format_result}")
     print(f"Expected ISO Format: {expected_iso_format}")
