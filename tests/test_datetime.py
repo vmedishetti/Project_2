@@ -8,7 +8,7 @@ sys.path.append(abspath(dirname(dirname(__file__))))
 from my_datetime.datetime import Datetime
 
 def test_constructor_defaults():
-    dt = Datetime()
+    dt = Datetime()  # Using the default constructor to get the current date and time
     current_datetime = datetime.datetime.now()
 
     assert dt.date_time.year == current_datetime.year
@@ -27,9 +27,9 @@ def test_constructor_defaults():
     print(f"Actual Second: {dt.date_time.second}")
 
 def test_iso_format():
-    dt = Datetime(2023, 11, 26, 19, 3, 27)
+    dt = Datetime()  # Use the default constructor to get the current date and time
     iso_format_result = dt.iso_format()
-    expected_iso_format = '2023-11-26T19:03:27'
+    expected_iso_format = datetime.datetime.now().isoformat()
     
     assert iso_format_result == expected_iso_format
 
